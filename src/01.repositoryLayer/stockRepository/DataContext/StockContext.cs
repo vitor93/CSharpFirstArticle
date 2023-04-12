@@ -14,7 +14,9 @@ public class StockContext : IStockContext
     private readonly ILogger<StockContext> _logger;
     private readonly MongoConfiguration _mongoDbConfig;
 
-    public StockContext(IOptions<MongoConfiguration> options, ILogger<StockContext> logger)
+    public StockContext(
+        IOptions<MongoConfiguration> options,
+        ILogger<StockContext> logger)
     {
         try
         {
