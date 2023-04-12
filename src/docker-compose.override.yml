@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  stocksapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "8080:80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+    depends_on:
+      - stocks-api-db
+  stocks-api-db:
+    container_name: stocks-api-db
+    ports:
+      - "27017:27017"
+    volumes:
+      - "c:\\data\\stocks-api-db:/data/db"

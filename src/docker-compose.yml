@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  stocksapi:
+    image: ${DOCKER_REGISTRY-}stocksapi
+    build:
+      context: .
+      dockerfile: 03.presentationLayer/stocksApi/Dockerfile
+  stocks-api-db:
+    image: mongo
