@@ -1,4 +1,4 @@
-﻿namespace stockRepository.Entities;
+﻿namespace StockRepository.Entities;
 
 public class StockBatch
 {

@@ -1,4 +1,4 @@
-﻿namespace sharedModels;
+﻿namespace SharedModels;
 
 public class MongoConfiguration
 {

@@ -1,6 +1,6 @@
-﻿using sharedModels.Response.Enums;
+﻿using SharedModels.Response.Enums;
 
-namespace sharedModels.Response;
+namespace SharedModels.Response;
 
 /// <summary>
 /// Generic Response Model

@@ -1,7 +1,7 @@
-﻿using stocksApi.Models.Request;
+﻿using StocksApi.Models.Request;
 using System.ComponentModel.DataAnnotations;
 
-namespace stocksApi.Utils.Validation;
+namespace StocksApi.Utils.Validation;
 
 public class ValidateRequestStocksDto : ValidationAttribute
 {

@@ -1,10 +1,10 @@
 ﻿using Microsoft.OpenApi.Models;
-using sharedConstants;
-using sharedModels;
-using stockRepository.DataContext;
-using stockService.StockService;
+using SharedConstants;
+using SharedModels;
+using StockRepository.DataContext;
+using StockService.StockService;
 
-namespace stocksApi.Configuration;
+namespace StocksApi.Configuration;
 
 public static class ServiceCollection
 {
@@ -21,7 +21,7 @@ public static class ServiceCollection
         var services = webApplicationBuilder.Services;
 
         services.AddSingleton<IStockContext, StockContext>();
-        services.AddSingleton<IStockService, StockService>();
+        services.AddSingleton<IStockService, StockService.StockService.StockService>();
     }
 
     public static void AddSwaggerConfiguration(this WebApplicationBuilder webApplicationBuilder)

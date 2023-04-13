@@ -1,8 +1,8 @@
-﻿using sharedMethods.Mapping;
-using stockRepository.Entities;
-using stockService.StockService.Models;
+﻿using SharedMethods.Mapping;
+using StockRepository.Entities;
+using StockService.StockService.Models;
 
-namespace stockService.StockService.Mapping;
+namespace StockService.StockService.Mapping;
 
 public static class StockMapper
 {

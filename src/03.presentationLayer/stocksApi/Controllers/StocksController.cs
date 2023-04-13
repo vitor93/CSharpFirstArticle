@@ -1,15 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using sharedModels.Response.Enums;
-using sharedModels.Response;
-using stockService.StockService;
+using SharedModels.Response.Enums;
+using SharedModels.Response;
+using StockService.StockService;
 using System.Net;
-using stockService.StockService.Models;
-using stocksApi.Models.Request;
-using sharedMethods.Logging;
-using Microsoft.AspNetCore.Http.HttpResults;
-using sharedModels.Response.Constants;
+using StockService.StockService.Models;
+using StocksApi.Models.Request;
+using SharedMethods.Logging;
+using SharedModels.Response.Constants;
 
-namespace stocksApi.Controllers
+namespace StocksApi.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller]")]

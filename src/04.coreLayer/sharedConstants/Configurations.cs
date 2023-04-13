@@ -1,4 +1,4 @@
-﻿namespace sharedConstants;
+﻿namespace SharedConstants;
 
 public enum Configurations
 {

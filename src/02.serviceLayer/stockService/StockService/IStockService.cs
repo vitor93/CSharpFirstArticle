@@ -1,8 +1,8 @@
-﻿using sharedModels.Response;
-using stockService.StockService.Enums;
-using stockService.StockService.Models;
+﻿using SharedModels.Response;
+using StockService.StockService.Enums;
+using StockService.StockService.Models;
 
-namespace stockService.StockService;
+namespace StockService.StockService;
 
 public interface IStockService
 {

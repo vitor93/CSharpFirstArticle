@@ -1,4 +1,4 @@
-using stocksApi.Configuration;
+using StocksApi.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 

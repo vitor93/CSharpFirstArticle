@@ -1,7 +1,7 @@
 ﻿using MongoDB.Driver;
-using stockRepository.Entities;
+using StockRepository.Entities;
 
-namespace stockRepository.DataContext.Seed;
+namespace StockRepository.DataContext.Seed;
 
 public class StockContextSeed
 {

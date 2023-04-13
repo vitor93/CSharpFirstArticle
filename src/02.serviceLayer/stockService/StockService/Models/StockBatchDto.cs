@@ -1,4 +1,4 @@
-﻿namespace stockService.StockService.Models;
+﻿namespace StockService.StockService.Models;
 
 public class StockBatchDto
 {

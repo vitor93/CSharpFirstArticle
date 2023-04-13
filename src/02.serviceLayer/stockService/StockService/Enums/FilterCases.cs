@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
-namespace stockService.StockService.Enums;
+namespace StockService.StockService.Enums;
 
 /// <summary>
 /// Filter Cases

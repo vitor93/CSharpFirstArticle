@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.Serialization;
 
-namespace sharedModels.Response.Enums;
+namespace SharedModels.Response.Enums;
 
 /// <summary>
 /// Response Status Enum

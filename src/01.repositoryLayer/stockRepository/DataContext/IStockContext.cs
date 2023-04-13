@@ -1,7 +1,7 @@
 ﻿using MongoDB.Driver;
-using stockRepository.Entities;
+using StockRepository.Entities;
 
-namespace stockRepository.DataContext;
+namespace StockRepository.DataContext;
 
 public interface IStockContext
 {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace stocksApi.Models.Request;
+namespace StocksApi.Models.Request;
 
 public class RequestStockDeleteDto
 {

@@ -1,4 +1,4 @@
-﻿namespace sharedModels.Response.Constants;
+﻿namespace SharedModels.Response.Constants;
 
 public static class ResponseMessages
 {

@@ -1,19 +1,19 @@
 ﻿using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
-using sharedMethods.Logging;
-using sharedMethods.Mapping;
-using sharedModels.Response;
-using sharedModels.Response.Enums;
-using stockRepository.DataContext;
-using stockRepository.Entities;
-using stockService.StockService.Constants;
-using stockService.StockService.Enums;
-using stockService.StockService.Mapping;
-using stockService.StockService.Models;
+using SharedMethods.Logging;
+using SharedMethods.Mapping;
+using SharedModels.Response;
+using SharedModels.Response.Enums;
+using StockRepository.DataContext;
+using StockRepository.Entities;
+using StockService.StockService.Constants;
+using StockService.StockService.Enums;
+using StockService.StockService.Mapping;
+using StockService.StockService.Models;
 using System.Linq.Expressions;
 using System.Text.Json;
 
-namespace stockService.StockService;
+namespace StockService.StockService;
 
 public class StockService : IStockService
 {
@@ -89,7 +89,7 @@ public class StockService : IStockService
     {
         return await Task.Run(() =>
         {
-            FilterDefinition<Stock> filterToReturn = null;
+            FilterDefinition<Stock>? filterToReturn = null;
 
             switch (filter)
             {
@@ -129,7 +129,7 @@ public class StockService : IStockService
     {
         return await Task.Run(() =>
         {
-            Expression<Func<Stock, object>> expression = null;
+            Expression<Func<Stock, object>>? expression = null;
 
             switch (fieldToOrderCases)
             {

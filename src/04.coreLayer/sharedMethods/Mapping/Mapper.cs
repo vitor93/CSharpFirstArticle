@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Reflection;
 
-namespace sharedMethods.Mapping
+namespace SharedMethods.Mapping
 {
     public static class Mapper
     {

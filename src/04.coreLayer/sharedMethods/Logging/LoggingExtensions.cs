@@ -1,4 +1,4 @@
-﻿namespace sharedMethods.Logging;
+﻿namespace SharedMethods.Logging;
 
 public static class LoggingExtensions
 {

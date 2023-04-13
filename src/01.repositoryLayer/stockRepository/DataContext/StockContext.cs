@@ -1,12 +1,12 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
-using sharedMethods.Logging;
-using sharedModels;
-using stockRepository.DataContext.Seed;
-using stockRepository.Entities;
+using SharedMethods.Logging;
+using SharedModels;
+using StockRepository.DataContext.Seed;
+using StockRepository.Entities;
 
-namespace stockRepository.DataContext;
+namespace StockRepository.DataContext;
 
 public class StockContext : IStockContext
 {

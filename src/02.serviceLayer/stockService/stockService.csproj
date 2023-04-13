@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\01.repositoryLayer\stockRepository\stockRepository.csproj" />
+    <ProjectReference Include="..\..\01.repositoryLayer\stockRepository\StockRepository.csproj" />
   </ItemGroup>
 
 </Project>

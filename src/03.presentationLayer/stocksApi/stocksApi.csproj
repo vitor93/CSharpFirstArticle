@@ -28,10 +28,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\01.repositoryLayer\stockRepository\stockRepository.csproj" />
-    <ProjectReference Include="..\..\02.serviceLayer\stockService\stockService.csproj" />
-    <ProjectReference Include="..\..\04.coreLayer\sharedConstants\sharedConstants.csproj" />
-    <ProjectReference Include="..\..\04.coreLayer\sharedModels\sharedModels.csproj" />
+    <ProjectReference Include="..\..\01.repositoryLayer\stockRepository\StockRepository.csproj" />
+    <ProjectReference Include="..\..\02.serviceLayer\stockService\StockService.csproj" />
+    <ProjectReference Include="..\..\04.coreLayer\sharedConstants\SharedConstants.csproj" />
+    <ProjectReference Include="..\..\04.coreLayer\sharedModels\SharedModels.csproj" />
   </ItemGroup>
 
 </Project>

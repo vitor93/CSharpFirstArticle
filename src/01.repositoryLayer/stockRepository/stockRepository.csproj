@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\04.coreLayer\sharedMethods\sharedMethods.csproj" />
-    <ProjectReference Include="..\..\04.coreLayer\sharedModels\sharedModels.csproj" />
+    <ProjectReference Include="..\..\04.coreLayer\sharedMethods\SharedMethods.csproj" />
+    <ProjectReference Include="..\..\04.coreLayer\sharedModels\SharedModels.csproj" />
   </ItemGroup>
 
 </Project>
