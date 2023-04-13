@@ -50,13 +50,11 @@ public static class ServiceCollection
                 }
             });
 
-            var filePath = Path.Combine(System.AppContext.BaseDirectory, "Stocks.xml");
+            var xmlFilename = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
+            var filePath = Path.Combine(System.AppContext.BaseDirectory, xmlFilename);
             config.IncludeXmlComments(filePath, true);
 
             config.EnableAnnotations();
         });
-
-        //Add Swagger Gen 
-        services.AddSwaggerGenNewtonsoftSupport();
     }
 }

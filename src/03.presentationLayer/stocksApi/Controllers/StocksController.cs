@@ -23,8 +23,10 @@ namespace StocksApi.Controllers
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
+        
+
         /// <summary>
-        /// Method to get stocks
+        /// Get stocks method
         /// </summary>
         /// <param name="requestStocksDTO"></param>
         /// <returns></returns>
