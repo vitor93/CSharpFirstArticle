@@ -2,7 +2,7 @@
 using SharedConstants;
 using SharedModels;
 using StockRepository.DataContext;
-using StockService.StockService;
+using StockService;
 
 namespace StocksApi.Configuration;
 
@@ -21,7 +21,7 @@ public static class ServiceCollection
         var services = webApplicationBuilder.Services;
 
         services.AddSingleton<IStockContext, StockContext>();
-        services.AddSingleton<IStockService, StockService.StockService.StockService>();
+        services.AddSingleton<IStockService, StockService.StockService>();
     }
 
     public static void AddSwaggerConfiguration(this WebApplicationBuilder webApplicationBuilder)

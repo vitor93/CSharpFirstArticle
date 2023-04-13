@@ -1,8 +1,8 @@
 ﻿using SharedMethods.Mapping;
 using StockRepository.Entities;
-using StockService.StockService.Models;
+using StockService.Models;
 
-namespace StockService.StockService.Mapping;
+namespace StockService.Mapping;
 
 public static class StockMapper
 {
@@ -11,22 +11,22 @@ public static class StockMapper
         var destination = Mapper.Map<StockDto, Stock>(stockDto);
         return destination;
     }
-    
-   public static List<Stock>? Map(this List<StockDto> stockDto)
+
+    public static List<Stock>? Map(this List<StockDto> stockDto)
     {
-        var destination = Mapper.MapList<StockDto,Stock>(stockDto);
+        var destination = Mapper.MapList<StockDto, Stock>(stockDto);
         return destination!.ToList();
     }
-    
+
     public static StockDto? Map(this Stock stock)
     {
         var destination = Mapper.Map<Stock, StockDto>(stock);
         return destination;
     }
-    
+
     public static List<StockDto>? Map(this List<Stock> stocks)
     {
-        var destination = Mapper.MapList<Stock,StockDto>(stocks);
+        var destination = Mapper.MapList<Stock, StockDto>(stocks);
         return destination!.ToList();
     }
 }

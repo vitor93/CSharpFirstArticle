@@ -1,19 +1,18 @@
 ﻿using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
 using SharedMethods.Logging;
-using SharedMethods.Mapping;
 using SharedModels.Response;
 using SharedModels.Response.Enums;
 using StockRepository.DataContext;
 using StockRepository.Entities;
-using StockService.StockService.Constants;
-using StockService.StockService.Enums;
-using StockService.StockService.Mapping;
-using StockService.StockService.Models;
+using StockService.Constants;
+using StockService.Enums;
+using StockService.Mapping;
+using StockService.Models;
 using System.Linq.Expressions;
 using System.Text.Json;
 
-namespace StockService.StockService;
+namespace StockService;
 
 public class StockService : IStockService
 {
@@ -29,7 +28,7 @@ public class StockService : IStockService
     public async Task<StockDto?> GetStockByProductSku(string productSku)
     {
         Stock? stockDto = await _stockContext.GetStockByProductSku(productSku);
-        if(stockDto is null)
+        if (stockDto is null)
         {
             _logger.LogWarning(message: string.Format(WarningMessages.CouldNotFindStockBySku, productSku));
             return null;
@@ -171,7 +170,7 @@ public class StockService : IStockService
             }
             //Before inserting map object from API Entity DTO to DB Entity
             var stock = stocks.Map();
-            if(stock is null)
+            if (stock is null)
             {
                 return new GenericResponse()
                 {
@@ -202,7 +201,7 @@ public class StockService : IStockService
     public async Task<bool> UpdateStock(StockDto stocks)
     {
         var stock = stocks.Map();
-        if(stock is null)
+        if (stock is null)
         {
             _logger.LogWarning(
                 message: string.Format(WarningMessages.CouldNotUpdateStock,
@@ -213,7 +212,7 @@ public class StockService : IStockService
         }
         return await _stockContext.UpdateStock(stock);
     }
-    
+
     public async Task<bool> DeleteStock(string productSku)
     {
         Stock? stockDto = await _stockContext.GetStockByProductSku(productSku);
@@ -230,7 +229,7 @@ public class StockService : IStockService
     public async Task<bool> UpdateStocks(List<StockDto> stocksDto)
     {
         var stocks = stocksDto.Map();
-        if(stocks is null)
+        if (stocks is null)
         {
             _logger.LogWarning(
                 message: string.Format(WarningMessages.CouldNotUpdateStocks,

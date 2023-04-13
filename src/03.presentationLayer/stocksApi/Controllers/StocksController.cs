@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SharedModels.Response.Enums;
 using SharedModels.Response;
-using StockService.StockService;
 using System.Net;
-using StockService.StockService.Models;
 using StocksApi.Models.Request;
 using SharedMethods.Logging;
 using SharedModels.Response.Constants;
+using StockService.Models;
+using StockService;
 
 namespace StocksApi.Controllers
 {

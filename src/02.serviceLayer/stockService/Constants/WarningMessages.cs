@@ -1,4 +1,4 @@
-﻿namespace StockService.StockService.Constants;
+﻿namespace StockService.Constants;
 
 internal class WarningMessages
 {

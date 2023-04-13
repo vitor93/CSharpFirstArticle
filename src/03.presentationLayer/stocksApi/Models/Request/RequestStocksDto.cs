@@ -1,5 +1,5 @@
 ﻿using StocksApi.Utils.Validation;
-using StockService.StockService.Enums;
+using StockService.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
