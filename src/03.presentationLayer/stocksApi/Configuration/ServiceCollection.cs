@@ -50,7 +50,8 @@ public static class ServiceCollection
                 }
             });
 
-            var xmlFilename = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
+            string? projectName = typeof(ServiceCollection).Namespace!.Split('.').FirstOrDefault();
+            var xmlFilename = $"{projectName}.xml";
             var filePath = Path.Combine(System.AppContext.BaseDirectory, xmlFilename);
             config.IncludeXmlComments(filePath, true);
 
