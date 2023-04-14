@@ -1,8 +1,13 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using SharedConstants;
 using SharedModels;
 using StockRepository.DataContext;
 using StockService;
+using System.Text;
+using UserRepository.DataContext;
+using UserService;
 
 namespace StocksApi.Configuration;
 
@@ -22,6 +27,14 @@ public static class ServiceCollection
 
         services.AddSingleton<IStockContext, StockContext>();
         services.AddSingleton<IStockService, StockService.StockService>();
+    }
+    
+    public static void AddUserService(this WebApplicationBuilder webApplicationBuilder)
+    {
+        var services = webApplicationBuilder.Services;
+
+        services.AddSingleton<IUserContext, UserContext>();
+        services.AddSingleton<IUserService, UserService.UserService>();
     }
 
     public static void AddSwaggerConfiguration(this WebApplicationBuilder webApplicationBuilder)
@@ -56,6 +69,56 @@ public static class ServiceCollection
             config.IncludeXmlComments(filePath, true);
 
             config.EnableAnnotations();
+
+            //Enable Security Definitions for JWT
+            config.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme()
+            {
+                Name = "Authorization",
+                Type = SecuritySchemeType.ApiKey,
+                Scheme = "Bearer",
+                BearerFormat = "JWT",
+                In = ParameterLocation.Header,
+                Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"",
+            });
+            //Enable Security Requirement
+            config.AddSecurityRequirement(new OpenApiSecurityRequirement()
+            {
+                {
+                    new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                        }
+                    },
+                    new string[] {}
+                }
+            });
+        });
+    }
+
+    public static void AddAuthentication(this WebApplicationBuilder webApplicationBuilder)
+    {
+        var configuration = webApplicationBuilder.Configuration;
+
+        webApplicationBuilder.Services.AddAuthentication(option =>
+        {
+            option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+        }).AddJwtBearer(options =>
+        {
+            options.TokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = false,
+                ValidateIssuerSigningKey = true,
+                ValidIssuer = configuration["Jwt:Issuer"],
+                ValidAudience = configuration["Jwt:Issuer"],
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]!))
+            };
         });
     }
 }

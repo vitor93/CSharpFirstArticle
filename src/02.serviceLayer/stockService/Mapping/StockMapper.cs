@@ -4,7 +4,7 @@ using StockService.Models;
 
 namespace StockService.Mapping;
 
-public static class StockMapper
+internal static class StockMapper
 {
     public static Stock? Map(this StockDto stockDto)
     {

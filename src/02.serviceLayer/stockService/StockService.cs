@@ -21,8 +21,8 @@ public class StockService : IStockService
 
     public StockService(IStockContext stockContext, ILogger<StockService> logger)
     {
-        _stockContext = stockContext ?? throw new ArgumentNullException(nameof(stockContext)); ;
-        _logger = logger ?? throw new ArgumentNullException(nameof(logger)); ;
+        _stockContext = stockContext ?? throw new ArgumentNullException(nameof(stockContext));
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
     public async Task<StockDto?> GetStockByProductSku(string productSku)

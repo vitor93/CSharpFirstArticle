@@ -3,7 +3,7 @@ using StockRepository.Entities;
 
 namespace StockRepository.DataContext.Seed;
 
-public class StockContextSeed
+internal class StockContextSeed
 {
     public async static void SeedData(IMongoCollection<Stock> stockCollection)
     {
